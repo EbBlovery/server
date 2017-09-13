@@ -5,7 +5,7 @@
 </head>
 <body>
    <div>
-   	   <form action="/login" method="post">
+   	   <!-- <form action="http://localhost:3000/login" method="post"> -->
    	   	   <label>
    	   	   	   学号<input type="text" name="username">
    	   	   </label>
@@ -15,7 +15,32 @@
    	   	   <div>
    	   	   	   <button type="submit">submit</button>
    	   	   </div>
-   	   </form>
+   	   <!-- </form> -->
    </div>
+   <script type="text/javascript">
+   	   // console.log(document.cookie('name'));
+   	   function Ajax(method,url){
+   	   	   return new Promise((resolve,reject)=>{
+	   	   	   	var xhr = new XMLHttpRequest();
+	            xhr.onreadystatechange = function(){
+	            	if(xhr.status===200 && xhr.readyState ===4){
+	                    resolve(xhr.responseText)
+	            	}else{
+	            		reject('error')
+	            	}
+	            }
+	            xhr.open(method,url,false);
+	            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gb2312");
+                xhr.send('username=1441145&password=194230')
+   	   	   })
+   	   }
+   	   Ajax('post','http://localhost:3000/login').then(res=>{
+   	   	   // console.log(res);
+   	   	   console.log(document.cookie)
+   	   })
+   	   
+       
+
+   </script>
 </body>
 </html>
