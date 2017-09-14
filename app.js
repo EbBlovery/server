@@ -12,7 +12,7 @@ app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-
+console.log(app)
 
 app.use(express.static(__dirname + '/public'));
 
