@@ -16,6 +16,10 @@
    	   	   	   <button type="submit">submit</button>
    	   	   </div>
    	   <!-- </form> -->
+
+   	   <div>
+   	   	   <button id="getcour">成绩</button>
+   	   </div>
    </div>
    <script type="text/javascript">
    	   // console.log(document.cookie('name'));
@@ -29,16 +33,26 @@
 	            		reject('error')
 	            	}
 	            }
-	            xhr.open(method,url,false);
+	            xhr.open(method,url,true);
 	            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gb2312");
                 xhr.send('username=1441145&password=194230')
    	   	   })
    	   }
-   	   Ajax('post','http://localhost:3000/login').then(res=>{
+   	   Ajax('post','/login').then(res=>{
    	   	   // console.log(res);
    	   	   console.log(document.cookie)
+   	   }).catch(err=>{
+   	   	    console.log('err')
+   	   	    console.log(document.cookie)
    	   })
-   	   
+
+
+   	   var getcour = document.querySelector('#getcour');
+   	   getcour.addEventListener('click',()=>{
+   	   	   Ajax('post','/getcour').then(res=>{
+   	   	   	   console.log(123123)
+   	   	   })
+   	   })
        
 
    </script>

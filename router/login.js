@@ -5,7 +5,7 @@ async function Login(req,res){
     var { data } = await getUrpLogin(username,password);
     // console.log(getUrpLogin())
     if(data.pass){
-        res.cookie('logins',{'name':data.cookie},{maxAge:1000*60*60*24});
+        res.cookie('JSESSONID',data.cookie,{maxAge:1000*60*60*24});
         console.log(data.cookie);
         res.json({
         	data:{
