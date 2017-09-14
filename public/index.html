@@ -21,38 +21,51 @@
    	   	   <button id="getcour">成绩</button>
    	   </div>
    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
    <script type="text/javascript">
-   	   // console.log(document.cookie('name'));
-   	   function Ajax(method,url){
-   	   	   return new Promise((resolve,reject)=>{
-	   	   	   	var xhr = new XMLHttpRequest();
-	            xhr.onreadystatechange = function(){
-	            	if(xhr.status===200 && xhr.readyState ===4){
-	                    resolve(xhr.responseText)
-	            	}else{
-	            		reject('error')
-	            	}
-	            }
-	            xhr.open(method,url,true);
-	            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gb2312");
-                xhr.send('username=1441145&password=194230')
-   	   	   })
-   	   }
-   	   Ajax('post','/login').then(res=>{
-   	   	   // console.log(res);
-   	   	   console.log(document.cookie)
-   	   }).catch(err=>{
-   	   	    console.log('err')
-   	   	    console.log(document.cookie)
-   	   })
+   	   // // console.log(document.cookie('name'));
+   	   // function Ajax(method,url){
+   	   // 	   return new Promise((resolve,reject)=>{
+	   	  //  	   	var xhr = new XMLHttpRequest();
+	      //       xhr.onreadystatechange = function(){
+	      //       	if(xhr.status===200 && xhr.readyState ===4){
+	      //               resolve(xhr.responseText)
+	      //       	}else{
+	      //       		reject('error')
+	      //       	}
+	      //       }
+	      //       xhr.open(method,url,true);
+	      //       xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gb2312");
+       //          xhr.send('username=1441145&password=194230')
+   	   // 	   })
+   	   // }
+   	   // Ajax('post','/login').then(res=>{
+   	   // 	   // console.log(res);
+   	   // 	   console.log(document.cookie)
+   	   // }).catch(err=>{
+   	   // 	    console.log('err')
+   	   // 	    console.log(document.cookie)
+   	   // })
+       $(function(){
+            $.post('http://localhost:3000/login',{'username':1441145,'password':194230},function(data){
+                console.log(data)
+                console.log(document.cookie)
+            })  
+       })
+       $(function(){
+       	   $('#getcour').click(function(){
+       	   	   $.post('http://localhost:3000/getcour',function(data){
+                   console.log(12313)
+       	   	   })
+       	   })
+       })
 
-
-   	   var getcour = document.querySelector('#getcour');
-   	   getcour.addEventListener('click',()=>{
-   	   	   Ajax('post','/getcour').then(res=>{
-   	   	   	   console.log(123123)
-   	   	   })
-   	   })
+   	   // var getcour = document.querySelector('#getcour');
+   	   // getcour.addEventListener('click',()=>{
+   	   // 	   Ajax('post','/getcour').then(res=>{
+   	   // 	   	   console.log(123123)
+   	   // 	   })
+   	   // })
        
 
    </script>
