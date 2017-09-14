@@ -11,6 +11,9 @@
    	   <div>
    	   	   <button id="getcour">成绩</button>
    	   </div>
+   	   <div>
+   	   	   <button id="gealltcour">全部成绩</button>
+   	   </div>
    </div>
     <script src="./jquery.js"></script>
    <script type="text/javascript">
@@ -24,7 +27,14 @@
        })
        $(function(){
        	   $('#getcour').click(function(){
-       	   	   $.post('/getcour',{'username':1441145,'password':194230},function(data){
+       	   	   $.post('/newachi',function(data){
+                   // console.log(12313)
+       	   	   })
+       	   })
+       })
+       $(function(){
+       	   $('#gealltcour').click(function(){
+       	   	   $.post('/oldachi',function(data){
                    // console.log(12313)
        	   	   })
        	   })

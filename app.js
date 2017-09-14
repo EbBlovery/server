@@ -29,7 +29,9 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/login',require('./router/login'));
-app.post('/getcour',require('./router/newAchi'));
+app.post('/newachi',require('./router/newAchi'));
+app.post('/oldachi',require('./router/oldAchi'));
+
 
 app.listen(3000,()=>{
 	console.log('app listen at port: 3000')
