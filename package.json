@@ -14,6 +14,7 @@
     "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
+    "mongoose": "^4.11.11",
     "superagent": "^3.6.0",
     "superagent-charset": "^1.2.0"
   }
