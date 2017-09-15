@@ -1,10 +1,8 @@
 var getOldAchi = require('./lib/getOldAchi');
 
 async function oldAchi(req,res){
-    var {data} = await getOldAchi(req,res);
-    res.json({
-    	data
-    })
+	console.log(app)
+    await getOldAchi(req,res);
 }
 
 module.exports = oldAchi;
