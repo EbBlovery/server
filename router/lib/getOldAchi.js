@@ -12,11 +12,11 @@ async function getOldAchi(req,res,type='cache'){
         	console.log(username);
         	var data = await req.app.locals.db.OldAchi.findOne({'username':username}).exec();
         	if(data){
-        		var {achi} = data;
+        		var {ret} = data;
                 res.json({
                 	data: {
                 		pass: true,
-                		ret:achi,
+                		ret,
                 		type: 'cache'
                 	}
                 })
@@ -39,6 +39,13 @@ async function fetchFresh(req,res,login){
     var { pass, ret } = data;
     var { username } = req.app.locals.user;
     if(pass){
+    	 res.json({
+    	 	data:{
+    	 		pass: true,
+        		ret,
+        		type: 'cache'
+    	 	}
+    	 })
          req.app.locals.db.OldAchi.update({ username },{$set: ret},{upsert: true}).exec()
     }else{
     	res.json({
