@@ -1,11 +1,12 @@
 var fetchOldAchi = require('../../lib/fetchOldAchi');
+var validateUser = require('./validateUser.js');
 
 async function getOldAchi(req,res,type='cache'){
     var {login} = req.cookies;
 	if(type == 'fresh'){
         await fetchFresh(req,res,login)
 	}else{
-        console.log(req.app.locals)
+
 	}
 }
 
