@@ -14,6 +14,12 @@ async function fetchFresh(req,res,login){
     var { pass, ret } = data;
     if(pass){
          req.app.locals.db.oldAchi.update({})
+    }else{
+    	res.json({
+    		data:{
+    		    pass:false
+    		}
+    	})
     }
 }
 
