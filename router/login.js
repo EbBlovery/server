@@ -9,7 +9,6 @@ async function Login(req,res){
             password,
             updateTime: new Date()
         }
-        console.log(value);
         res.cookie('login',data.cookie,{maxAge:1000*60*60*24});
         req.app.locals.db.User.update({username},{$set: value},{upsert: true}).exec();
         req.app.locals.user = {
