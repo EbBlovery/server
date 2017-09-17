@@ -32,6 +32,8 @@ app.get('/',(req,res)=>{
 app.post('/login',require('./router/login'));
 app.post('/newachi',require('./router/newAchi'));
 app.post('/oldachi',require('./router/oldAchi'));
+app.post('/curriculum',require('./router/curriculum'))
+
 
 
 app.listen(3000,()=>{
