@@ -4,13 +4,12 @@ async function getCurri(req,res){
 	var {login} = req.cookies;
     var {data} = await fetchUrpCurri(req,res,login);
     var {pass,ret} = data;
-    console.log(ret);
+    console.log(data);
     if(pass){
+    	console
         res.json({
-        	data:{
-        		pass:true,
-                ret
-        	}
+        	pass:true,
+        	ret
         })
     }else{
     	res.json({
