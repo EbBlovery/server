@@ -17,6 +17,9 @@
        <div>
            <button id="curri">课程表</button>
        </div>
+       <div>
+           <button id="userinfo">userInfo</button>
+       </div>
    </div>
     <script src="./jquery.js"></script>
    <script type="text/javascript">
@@ -45,6 +48,13 @@
        $(function(){
            $('#curri').click(function(){
                $.post('/curriculum',function(data){
+                   // console.log(12313)
+               })
+           })
+       })
+       $(function(){
+           $('#userinfo').click(function(){
+               $.post('/userinfo',function(data){
                    // console.log(12313)
                })
            })
