@@ -34,7 +34,7 @@ app.post('/newachi',require('./router/newAchi'));
 app.post('/oldachi',require('./router/oldAchi'));
 app.post('/curriculum',require('./router/curriculum'));
 app.post('/userinfo',require('./router/userInfo'));
-
+app.post('/searchaddress',require('./router/search/searchAddress'))
 
 app.listen(3000,()=>{
 	console.log('app listen at port: 3000')

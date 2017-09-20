@@ -20,6 +20,10 @@
        <div>
            <button id="userinfo">userInfo</button>
        </div>
+       <div>
+           <button id="keywords">keywords</button>
+            
+       </div>
    </div>
     <script src="./jquery.js"></script>
    <script type="text/javascript">
@@ -55,6 +59,13 @@
        $(function(){
            $('#userinfo').click(function(){
                $.post('/userinfo',function(data){
+                   // console.log(12313)
+               })
+           })
+       })
+       $(function(){
+           $('#keywords').click(function(){
+               $.post('/searchaddress',{'keywords':'范萌芽'},function(data){
                    // console.log(12313)
                })
            })
