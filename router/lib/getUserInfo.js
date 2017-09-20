@@ -37,7 +37,7 @@ async function getFresh(req,res,login){
     var {data} = await fetchUserInfo(req,res,login);
     var {pass,ret} = data;
     if(pass){
-        req.app.locals.db.UserInfo.update({username},{$set: {'info':ret}},{upsert: true});
+        req.app.locals.db.UserInfo.update({username},{$set: {'info':ret}},{upsert: true}).exec();
         res.json({
         	data:{
         		pass: true,
