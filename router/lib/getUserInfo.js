@@ -33,7 +33,25 @@ async function getUserInfo(req,res,type='cache'){
 
 
 async function getFresh(req,res,login){
+	var {username} = req.app.locals.user;
     var {data} = await fetchUserInfo(req,res,login);
+    var {pass,ret} = data;
+    if(pass){
+        req.app.locals.db.UserInfo.update({username},{$set: {'info':ret}},{upsert: true});
+        res.json({
+        	data:{
+        		pass: true,
+        		type: 'fresh',
+        		ret
+        	}
+        })
+    }else{
+    	res.json({
+    		data:{
+    			pass:false
+    		}
+    	})
+    }
 }
 
 module.exports = getUserInfo;
