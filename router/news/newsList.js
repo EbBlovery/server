@@ -3,18 +3,17 @@ var cheerio = require('cheerio');
 var getNewsList = require('../../lib/getNewsList');
 
 async function newsList(req,res){
-    var url = 'http://www.shou.edu.cn/';
+    var url = 'http://www.shou.edu.cn';
     var {data} = await getNewsList(req,res,url);
-    console.log(data);
-    // if(data){
-    // 	res.json({
-    // 		data
-    // 	})
-    // }else{
-    // 	res.json({
-    // 		data:'error'
-    // 	})
-    // }
+    if(data){
+    	res.json({
+    		data
+    	})
+    }else{
+    	res.json({
+    		data:'error'
+    	})
+    }
 }
 
 
