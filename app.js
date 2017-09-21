@@ -37,7 +37,7 @@ app.post('/userinfo',require('./router/userInfo'));
 app.post('/searchaddress',require('./router/search/searchAddress'))
 app.post('/searchclass',require('./router/search/searchClass'))
 
-app.get('/newsdetail',require('./router/news/newsDetail'))
+app.get('/newslist',require('./router/news/newsList'))
 
 app.listen(3000,()=>{
 	console.log('app listen at port: 3000')
