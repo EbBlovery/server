@@ -24,6 +24,10 @@
            <button id="keywords">keywords</button>
             
        </div>
+       <div>
+           <button id="newsdetail">newsdetail</button>
+            
+       </div>
    </div>
     <script src="./jquery.js"></script>
    <script type="text/javascript">
@@ -66,6 +70,13 @@
        $(function(){
            $('#keywords').click(function(){
                $.post('/searchaddress',{'keywords':'范萌芽'},function(data){
+                   // console.log(12313)
+               })
+           })
+       })
+       $(function(){
+           $('#newsdetail').click(function(){
+               $.get('/newsdetail',function(data){
                    // console.log(12313)
                })
            })
